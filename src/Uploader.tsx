@@ -57,12 +57,22 @@ export default function Uploader({ folderId }: Props) {
       />
 
       <button
-        disabled={loading}
-        onClick={upload}
-        className="w-full bg-blue-600 text-white py-2 rounded-xl disabled:opacity-50"
-      >
-        {loading ? 'Загрузка…' : 'Загрузить'}
-      </button>
+  disabled={loading || files.length === 0}
+  onClick={upload}
+  className="
+    w-full
+    bg-blue-600
+    text-white
+    py-4
+    rounded-2xl
+    text-lg font-semibold
+    disabled:opacity-40
+    disabled:cursor-not-allowed
+  "
+>
+  {loading ? 'Загрузка…' : 'Загрузить'}
+</button>
+
     </div>
   );
 }

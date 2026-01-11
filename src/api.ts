@@ -5,7 +5,7 @@ import { tg } from './telegram';
  * ВПИШИ СЮДА АДРЕС ТВОЕГО GAS WEB APP
  */
 const API_URL =
-  'https://script.google.com/macros/s/AKfycbz8jhdHer5qIfmLKT6zlJjU_ZOvEJ3ULTf3m0fIjpYCvGAtgVLTQV1xSBKbB1XKy9FWHw/exec';
+  'https://script.google.com/macros/s/AKfycbzkqYCdFM-PQqhwr__IFd6n71k_TK_DRQeXJkTPrqdQyrhx_SUX4hyZuUXSvki9qMG50g/exec';
 
 type ApiSuccess<T> = {
   ok: true;
@@ -34,12 +34,10 @@ export async function api<T>(
     };
 
     const res = await fetch(API_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    });
+  method: 'POST',
+  body: JSON.stringify(body),
+});
+
 
     if (!res.ok) {
       return {
