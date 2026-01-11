@@ -22,14 +22,14 @@ export default function App() {
 
     if (tg?.colorScheme === 'dark') setTheme('dark');
 
-    api('getOrgs').then(res => {
+    api<Org[]>('getOrgs').then(res => {
       if (res.ok) setOrgs(res.data);
       else alert(res.error);
     });
   }, []);
 
   const openFolder = async (folderId: string, title: string) => {
-    const res = await api('listFolders', { parent_folder_id: folderId });
+    const res = await api<Folder[]>('listFolders', { parent_folder_id: folderId });
     if (!res.ok) return alert(res.error);
 
     setStack(prev => [...prev, level]);
