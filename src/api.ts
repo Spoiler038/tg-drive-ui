@@ -35,6 +35,9 @@ export async function api<T>(
 
     const res = await fetch(API_URL, {
   method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
   body: JSON.stringify(body),
 });
 
