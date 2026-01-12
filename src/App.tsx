@@ -73,7 +73,7 @@ export default function App() {
   }}
       >
         {/* HEADER */}
-        <h1 className="text-xl font-semibold mb-6 pl-2">
+        <h1 className="text-xl font-semibold mb-6 pl-3">
           {level.type === 'orgs' ? 'Ресторан' : level.title}
         </h1>
 

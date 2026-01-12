@@ -5,7 +5,7 @@ import { tg } from './telegram';
  * ВПИШИ СЮДА АДРЕС ТВОЕГО GAS WEB APP
  */
 const API_URL =
-  'https://script.google.com/macros/s/AKfycbzkqYCdFM-PQqhwr__IFd6n71k_TK_DRQeXJkTPrqdQyrhx_SUX4hyZuUXSvki9qMG50g/exec';
+  'https://script.google.com/macros/s/AKfycbxR0JoioHJH0CiSfb6LlX4xJtJEETnftxhHgy-8KoUToecdGOBrKkk6yuvM9aBaKYYJ2g/exec';
 
 type ApiSuccess<T> = {
   ok: true;
