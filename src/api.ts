@@ -5,7 +5,7 @@ import { tg } from './telegram';
  * ВПИШИ СЮДА АДРЕС ТВОЕГО GAS WEB APP
  */
 const API_URL =
-  'https://script.google.com/macros/s/AKfycbxR0JoioHJH0CiSfb6LlX4xJtJEETnftxhHgy-8KoUToecdGOBrKkk6yuvM9aBaKYYJ2g/exec';
+  'https://script.google.com/macros/s/AKfycbygaXWDEwxJ_jqtWw5__kTxSi4YbMgGaGd4qCvHBZk0HeAWok58Evabsm0wRdpEvMXBpA/exec';
 
 type ApiSuccess<T> = {
   ok: true;
@@ -33,14 +33,15 @@ export async function api<T>(
       initData: tg?.initData || '',
     };
 
-    const res = await fetch(API_URL, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(body),
-});
+    const bodyString = JSON.stringify(body);
 
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: bodyString,
+    });
 
     if (!res.ok) {
       return {
@@ -62,10 +63,7 @@ export async function api<T>(
   } catch (e) {
     return {
       ok: false,
-      error:
-        e instanceof Error
-          ? e.message
-          : 'Unknown error',
+      error: e instanceof Error ? e.message : 'Unknown error',
     };
   }
 }
